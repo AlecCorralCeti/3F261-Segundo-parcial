@@ -1,16 +1,26 @@
-@startuml FooterFontColor
+@startuml foco
 
-Class Usiario
+Class Usuario
 
 Class Foco{
 - EstadoFoco estado
-+Encender ()
-+Apagar()
++ Encender ()
++ Apagar()
++Leerestado() : EstadoFoco
 }
 
-Class EstadoFoco
+class EstadoFoco
+class SerieFocos
+    - Foco focos [10]
+    +MostrarFocos()
+    +EncenderFocos()
+    +ApagarFocos()
+}
 
 usuario o-- Foco
 Foco*-- Estado Foco
+EstadoFoco --|> Texto 
+SerieFocos "1" *-- "10" Foco
+Usuario o-- SerieFocos
 
 @enduml

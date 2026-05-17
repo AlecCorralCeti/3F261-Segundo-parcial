@@ -1,0 +1,8 @@
+README.md
+assets
+bin
+directorios.txt
+docs
+fecha.txt
+include
+src
